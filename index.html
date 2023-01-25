@@ -148,6 +148,24 @@
 
     <script>
         //Part 3 Javascript sorting function
+        let mc = document.querySelectorAll('.machine');
+        let ac = document.querySelectorAll('a');
+        console.log(mc, ac);
+
+        function sort(event) {
+            let clkd = event.target.id;
+            mc.forEach(function(category) {
+                let cardClass = category.classList;
+                if(cardClass.contains(clkd)) {
+                    category.style.display = "block";
+                } else {
+                    category.style.display = "none";
+            }});
+        }
+
+        ac.forEach(function(tag){
+            tag.addEventListener('click', sort);
+        });
 
     </script>
 </body>
